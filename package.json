@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/praxispoetica/pp-cms-mvp01#readme",
   "dependencies": {
+    "gray-matter": "^3.0.6",
     "request": "^2.82.0"
   }
 }
