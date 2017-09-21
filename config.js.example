@@ -9,7 +9,7 @@ var config = {}
 
 // SCS server config
 config.server = {}
-config.server.host = http://example.com
+config.server.host = 'example.com'
 config.server.port = '9999'
 
 module.exports = config;
