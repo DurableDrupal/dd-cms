@@ -1,0 +1,20 @@
+{
+  "name": "pp-cms-mvp01",
+  "version": "1.0.0",
+  "description": "Primitive GitHub based CMS for PraxisPoetica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praxispoetica/pp-cms-mvp01.git"
+  },
+  "keywords": [],
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/praxispoetica/pp-cms-mvp01/issues"
+  },
+  "homepage": "https://github.com/praxispoetica/pp-cms-mvp01#readme"
+}
