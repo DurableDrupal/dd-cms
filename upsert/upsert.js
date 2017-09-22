@@ -6,7 +6,8 @@ var request = require('request')
 var host = config.server.host;
 var port = config.server.port;
 
-file = '../content/textos/adipiscing-gansta.md'
+// file = '../content/textos/adipiscing-gansta.md'
+file = '../content/textos/black-pellentesque.md'
 
 fs.readFile(file, 'utf8', function (err,data) {
   if (err) {
@@ -25,14 +26,11 @@ fs.readFile(file, 'utf8', function (err,data) {
       url: 'http://' + host + ':' + port + '/api/texts' 
     },
     function (error, response) {
-      /*
-      if (response.statusCode== 201) {
-        console.log(201)
+      if (error) {
+        console.log("error", error)
       } else {
-        console.log('error ' + response.statusCode)
+        console.log("response", response.body)
       }
-      */
-      console.log('got it')
     }
   )
 })
