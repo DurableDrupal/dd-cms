@@ -1,3 +1,6 @@
+// run with npm from project root: 'npm run upsert -- crunk-vizzle'
+// else 'cd upsert; node upsert crunk-vizzle'
+
 var fs = require('fs')
 var matter = require('gray-matter')
 var config = require('../config')
@@ -6,8 +9,13 @@ var request = require('request')
 var host = config.server.host;
 var port = config.server.port;
 
-// file = '../content/textos/adipiscing-gansta.md'
-file = '../content/textos/black-pellentesque.md'
+if (process.argv.length > 2) {
+  param = process.argv[2]
+} else {
+  param = 'black-pellentesque'
+}
+
+file = '../content/textos/' + param + '.md'
 
 fs.readFile(file, 'utf8', function (err,data) {
   if (err) {
