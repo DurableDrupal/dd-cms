@@ -4,5 +4,11 @@ slug: sed-errizle
 autor: Gangsta
 fecha: January 9, 1970
 ---
-**Sed erizzle**. Boofron izzle dolor fo shizzle turpis tempizzle crazy...
+**Sed erizzle**. Nulla eu crazy. Aliquizzle sure sheezy i'm in the shizzle. Aenizzle viverra, sapizzle at vulputate hendrerit, libero urna hendrerizzle mofo, non condimentizzle nunc sapien at boofron. Phat crackalackin dolizzle. Vestibulizzle quis get down get down. Sizzle nizzle my shizz eros. Integizzle cool sizzle, volutpat id, 
+
+<h4>hola chicos</h4>
+
+volutpizzle egizzle, auctor egizzle, nunc. Sizzle pharetra. Nunc doggy. Curabitizzle i saw beyonces tizzles and my pizzle went crizzle amet leo nizzle bizzle blandizzle dignissim. Quisque laoreet tellizzle dope amet enim. Aenean cool dizzle shizznit.
+
+
 
