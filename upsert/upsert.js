@@ -1,5 +1,5 @@
-// run with npm from project root: 'npm run upsert -- crunk-vizzle'
-// else 'cd upsert; node upsert crunk-vizzle'
+// run with npm from project root: 'npm run upsert -- textos crunk-vizzle'
+// else 'cd upsert; node upsert textos crunk-vizzle'
 
 var fs = require('fs')
 var matter = require('gray-matter')
@@ -9,10 +9,13 @@ var request = require('request')
 var host = config.server.host;
 var port = config.server.port;
 
-if (process.argv.length > 2) {
-  param = process.argv[2]
+if (process.argv.length > 3) {
+  contentType = process.argv[2]
+  param = process.argv[3]
 } else {
-  param = 'black-pellentesque'
+  console.log("\nnode upsert content-type slug")
+  console.log("node upsert texts the-book\n")
+  process.exit(0)
 }
 
 file = '../content/textos/' + param + '.md'
@@ -24,14 +27,14 @@ fs.readFile(file, 'utf8', function (err,data) {
   console.log(data);
   // parse front matter
   text = matter(data)
-  console.log(text);
+  // console.log(text);
   // upsert (based on unique slug) all slugs could have timestamp, etc.
   request(
     {
       method: 'PUT',
       json: text,
       headers: {'Content-Type': 'application/json'},
-      url: 'http://' + host + ':' + port + '/api/texts' 
+      url: 'http://' + host + ':' + port + '/api/' + contentType
     },
     function (error, response) {
       if (error) {
