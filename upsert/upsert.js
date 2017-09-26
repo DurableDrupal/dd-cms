@@ -1,5 +1,5 @@
-// run with npm from project root: 'npm run upsert -- textos crunk-vizzle'
-// else 'cd upsert; node upsert textos crunk-vizzle'
+// run with npm from project root: 'npm run upsert -- texts crunk-vizzle'
+// else 'cd upsert; node upsert texts crunk-vizzle'
 
 var fs = require('fs')
 var matter = require('gray-matter')
@@ -18,7 +18,7 @@ if (process.argv.length > 3) {
   process.exit(0)
 }
 
-file = '../content/textos/' + param + '.md'
+file = '../content/' + contentType + '/' + param + '.md'
 
 fs.readFile(file, 'utf8', function (err,data) {
   if (err) {
