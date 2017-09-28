@@ -4,7 +4,7 @@
 var fs = require('fs')
 var matter = require('gray-matter')
 var config = require('../config')
-var request = require('request')
+var rp = require('request-promise');
 
 var host = config.server.host;
 var port = config.server.port;
@@ -18,30 +18,25 @@ if (process.argv.length > 3) {
   process.exit(0)
 }
 
-file = '../content/' + contentType + '/' + param + '.md'
+const file = '../content/' + contentType + '/' + param + '.md'
+
+var optionsput = 
 
 fs.readFile(file, 'utf8', function (err,data) {
   if (err) {
     return console.log(err)
   }
-  console.log(data);
-  // parse front matter
   text = matter(data)
-  // console.log(text);
-  // upsert (based on unique slug) all slugs could have timestamp, etc.
-  request(
-    {
+  rp({
       method: 'PUT',
-      json: text,
-      headers: {'Content-Type': 'application/json'},
-      url: 'http://' + host + ':' + port + '/api/' + contentType
-    },
-    function (error, response) {
-      if (error) {
-        console.log("error", error)
-      } else {
-        console.log("response", response.body)
-      }
-    }
-  )
+      uri: 'http://' + host + ':' + port + '/api/' + contentType,
+      body: text,
+      json: true
+    })
+    .then(function (body) {
+      console.log('body ', body)
+    })
+    .catch(function (err) {
+      console.log('error', err)
+    })
 })

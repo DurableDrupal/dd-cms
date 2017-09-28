@@ -1,7 +1,7 @@
 ---
 titulo: Integro Semper
 slug: integer-semper
-autor: Gangsta 3433434 343434343 43434334
+autor: gustav-christensen
 fecha: January 1, 1970
 ---
 Dizzle daahng dawg nizzle. Fusce bizzle sheezy, dignissizzle shizzle my nizzle crocodizzle amet, break it down egizzle, sollicitudin nizzle, shizzle my nizzle crocodizzle. Maecenas fizzle bizzle. Sed malesuada neque izzle hizzle. Brizzle erat. Crizzle break it down tristique turpizzle. Suspendisse dope ultrices mammasay mammasa mamma oo sa. Gangsta tellivizzle libero, pharetra interdum, gizzle izzle, mofo izzle, fo shizzle my nizzle. 
