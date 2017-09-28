@@ -27,7 +27,31 @@ fs.readFile(file, 'utf8', function (err,data) {
     return console.log(err)
   }
   text = matter(data)
-  rp({
+  if (contentType === 'texts') {
+    rp({
+      method: 'GET',
+      uri: 'http://' + host + ':' + port + '/api/writersbyslug/'  + text.data.autor + '?select=_id',
+      json: true
+    })
+    .then(function (authorbody) {
+      console.log('author', authorbody)
+      authorId = authorbody._id
+      console.log('authorId', authorId)
+      rp({
+        method: 'PUT',
+        uri: 'http://' + host + ':' + port + '/api/' + contentType,
+        body: text,
+        json: true
+      })
+      .then(function (body) {
+        console.log('body ', body)
+      })
+      .catch(function (err) {
+        console.log('error', err)
+      })
+    })
+  } else {
+    rp({
       method: 'PUT',
       uri: 'http://' + host + ':' + port + '/api/' + contentType,
       body: text,
@@ -39,4 +63,5 @@ fs.readFile(file, 'utf8', function (err,data) {
     .catch(function (err) {
       console.log('error', err)
     })
+  }
 })
