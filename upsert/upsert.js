@@ -34,21 +34,26 @@ fs.readFile(file, 'utf8', function (err,data) {
       json: true
     })
     .then(function (authorbody) {
-      console.log('author', authorbody)
-      authorId = authorbody._id
-      console.log('authorId', authorId)
-      rp({
-        method: 'PUT',
-        uri: 'http://' + host + ':' + port + '/api/' + contentType,
-        body: text,
-        json: true
-      })
-      .then(function (body) {
-        console.log('body ', body)
-      })
-      .catch(function (err) {
-        console.log('error', err)
-      })
+      // console.log('author', authorbody)
+      if (typeof authorbody._id === "undefined" ) {
+        console.log("Unknown author", text.data.autor + "\n")
+      } else {
+        // console.log('authorId', authorId)
+        text.data.autor = authorbody._id
+        // console.log('text', text)
+        rp({
+          method: 'PUT',
+          uri: 'http://' + host + ':' + port + '/api/' + contentType,
+          body: text,
+          json: true
+        })
+        .then(function (body) {
+          // console.log('body ', body)
+        })
+        .catch(function (err) {
+          console.log('error', err)
+        })
+      }
     })
   } else {
     rp({
@@ -58,7 +63,7 @@ fs.readFile(file, 'utf8', function (err,data) {
       json: true
     })
     .then(function (body) {
-      console.log('body ', body)
+      // console.log('body ', body)
     })
     .catch(function (err) {
       console.log('error', err)
