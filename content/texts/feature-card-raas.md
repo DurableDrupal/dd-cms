@@ -4,5 +4,4 @@ slug: raas-20171009
 autor: victor-kane
 fecha: October 9, 2017
 --- 
-Vivamus leo quam, aliquizzle the bizzle, stuff vitae, pulvinizzle pulvinar, brizzle.
-
+###### Consult us for DurableDrupal Content Migration Rescue as a Service
